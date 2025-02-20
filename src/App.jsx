@@ -1,12 +1,11 @@
-
-import './App.css'
+import Navbar from './components/Navbar'
+import Homepage from './pages/Homepage'
 
 function App() {
   return (
     <>
-      <div>
-        <h1 className="text-3xl font-bold underline text-red-300">Hello, Vite + React!</h1>
-      </div>
+      <Navbar />
+      <Homepage></Homepage>
     </>
   )
 }
