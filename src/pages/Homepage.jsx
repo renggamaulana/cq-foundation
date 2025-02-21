@@ -1,4 +1,59 @@
-const Homepage = () => { 
+const Homepage = () => {
+
+    const donationCategories = [
+        {
+            id: 1,
+            title: "Semua Kategori",
+            isActive: true,
+            icon: "/assets/icons/overview.svg"
+        },
+        {
+            id: 2,
+            title: "Kemanusiaan",
+            isActive: false,
+            icon: "/assets/icons/donasi.svg"
+        },
+        {
+            id: 3,
+            title: "IBBQ",
+            isActive: false,
+            icon: "/assets/icons/mosque.svg"
+        },
+        {
+            id: 4,
+            title: "Wakaf",
+            isActive: false,
+            icon: "/assets/icons/wakaf.svg"
+        },
+        {
+            id: 5,
+            title: "Lainnya",
+            isActive: false,
+            icon: "/assets/icons/more.svg"
+        },
+    ];
+
+    const donations = [
+        {
+            id: 1,
+            title: "Sedekah Beras untuk seluruh para keluarga di afrika selatan",
+            image: "/assets/donation-card/1.png",
+            progress: 10
+        },
+        {
+            id: 2,
+            title: "Bantu Bencana Gempa dengan Kebutuhan Pokok",
+            image: "/assets/donation-card/2.png",
+            progress: 50
+        },
+        {
+            id: 3,
+            title: "Penyaluran Bantuan untuk Anak Yatim dan Dhuafa",
+            image: "/assets/donation-card/3.png",
+            progress: 70
+        },
+        
+    ];
     return (
       <div>
         <section className="h-screen overflow-hidden">
@@ -61,6 +116,58 @@ const Homepage = () => {
                     </button>
                 </div>
             </div>
+            {/* Donation Categories */}
+            <div className="flex gap-5 mt-10">
+                {donationCategories.map((donationCategory) => (
+                    <button key={donationCategory.id} className={`flex gap-2 border  w-full px-3 py-2 rounded-full font-light items-center justify-center hover:cursor-pointer hover:bg-[#eef7fc] hover:text-[#389ED9] hover:border-[#389ED9] ${donationCategory.isActive ? 'border-[#389ED9] bg-[#eef7fc] text-[#389ED9]' : 'border-neutral-300'}`}>
+                        <img src={donationCategory.icon} alt="" className="w-[24px] h-[24px]" />
+                        <p className="text-sm">{donationCategory.title}</p>
+                    </button>
+                ))}
+            </div>
+            {/* Donation Cards */}
+            <div className="grid grid-cols-3 gap-5 mt-10">
+                {donations.map((donation) => (
+                    <div key={donation.id} className="bg-white rounded-lg shadow-xl">
+                        <img src={donation.image} alt="" className="w-full rounded-t-md" />
+                        <div className="p-4">
+                            <div className=" bg-white rounded-md">
+                                <h1 className="text-base font-semibold">{donation.title}</h1>
+                                <p className="text-base font-light">{donation.description}</p>
+                            </div>
+                            <div className="flex justify-between items-center mt-8">
+                                <div className="">
+                                    <p className="text-sm font-light text-neutral-600">Dana Terkumpul</p>
+                                    <p className="text-md font-semibold text-[#389ED9]">Rp 0</p>
+
+                                </div>
+                                <div className="">
+                                    <p className="text-sm font-light text-neutral-600">Sisa Waktu</p>
+                                    <p className="text-md font-semibold text-[#389ED9]">2 Hari Lagi</p>
+                                </div>
+                            </div>
+                            <div className="relative w-full h-1 bg-gray-200 rounded-full overflow-hidden">
+                            <div
+                                className="h-full bg-lime-500 transition-all"
+                                style={{ width: `${donation.progress}%` }}
+                            ></div>
+                              <div
+                                className="absolute w-3 h-3 bg-lime-600 rounded-full"
+                                style={{ left: `calc(${donation.progress}% - 6px)`, top: "-2px" }}
+                            ></div>
+                            </div>
+                        </div>
+                    </div>
+                ))}
+            </div>
+            {/* Indicator */}
+            <div className="flex space-x-2 justify-center p-4">
+                <div className="h-1 w-8 rounded-full bg-blue-500"></div>
+                <div className="h-1 w-4 rounded-full bg-gray-300"></div>
+                <div className="h-1 w-4 rounded-full bg-gray-300"></div>
+                <div className="h-1 w-4 rounded-full bg-gray-300"></div>
+            </div>
+
         </section>
       </div>
     );
