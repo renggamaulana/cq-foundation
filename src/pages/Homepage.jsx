@@ -271,7 +271,7 @@ const Homepage = () => {
         {/* Program Pilihan */}
         <section className="max-h-[932px]">
             <div className="relative">
-                <img src="/assets/background/program.png" className="-translate-y-80" alt="" />
+                <img src="/assets/background/program.png" className="-translate-y-80 w-full " alt="" />
                 <div className=" absolute z-10 top-20 px-20 w-full">
                     <div className="flex justify-between items-center">
                         <div>
@@ -295,7 +295,6 @@ const Homepage = () => {
                                     index === 0 ? 'col-span-2' : index === 1 ? 'col-span-1' : 'col-span-1'
                                 }`}
                             >
-                                {/* Gambar dengan overlay */}
                                 <div className="relative">
                                     <img
                                         src={program.image}
@@ -304,7 +303,6 @@ const Homepage = () => {
                                     />
                                     <div className="absolute inset-0 bg-black opacity-30 rounded-3xl"></div>
                                 </div>
-                                {/* Teks di atas overlay */}
                                 <div className={`absolute flex flex-col ${
                                     index === 0 ? 'gap-3' : index === 1 ? 'gap-3' : 'gap-0'
                                 } bottom-0 left-0 w-full p-10 text-white z-10`}>
@@ -318,7 +316,7 @@ const Homepage = () => {
             </div>
         </section>
 
-        <section className="px-20 absolute w-full">
+        <section className="px-20 w-full relative">
             <div className="text-center">
                 <h1 className="text-5xl font-semibold mb-3">Kajian Inspiratif</h1>
                 <p className="text-md font-light text-neutral-600">Program kajian inspiratif dari kami untuk menemani aktivitas Sahabat Cinta Qur’an.</p>
