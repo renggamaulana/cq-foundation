@@ -9,7 +9,7 @@ export default function Program({programs}) {
                     className="w-full object-cover lg:-translate-y-96"
                     alt=""
                 />
-                <div className="absolute z-10 top-10 px-4 sm:px-8 lg:px-20 w-full">
+                <div className="absolute z-10 top-10 px-8 sm:px-8 lg:px-20 w-full">
                     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 lg:mb-0">
                         <div>
                             <h1 className="text-3xl lg:text-5xl font-semibold mb-2 lg:mb-3">

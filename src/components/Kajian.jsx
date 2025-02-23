@@ -4,7 +4,7 @@ export default function Kajian({kajianMenus, events}) {
     return (
         <section className="lg:px-20 w-full mt-10 lg:-translate-y-96">
             <div className="lg:text-center px-8">
-                <h1 className="text-4xl lg:text-5xl font-semibold mb-3">Kajian Inspiratif</h1>
+                <h1 className="text-3xl lg:text-5xl font-semibold mb-3">Kajian Inspiratif</h1>
                 <p className="text-md font-light text-neutral-600">Program kajian inspiratif dari kami untuk menemani aktivitas Sahabat Cinta Qur’an.</p>
             </div>
             <div className="flex pl-8 lg:pl-0 gap-3 mt-5 overflow-x-auto scrollbar-hide ">

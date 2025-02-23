@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export default function AmazingGroup({amazingGroups}) {
     return (
         <section>
-            <div className="relative -translate-y-48">
+            <div className="relative lg:-translate-y-48">
                 <div className="lg:max-h-[700px]">
                     <img src="/assets/background/partner.png" className="-translate-y-20 lg:max-h-full max-h-[500px] lg:-translate-y-96 w-full" alt="alt"/>
                     <div className="absolute top-7 w-full px-8">
@@ -37,8 +37,8 @@ export default function AmazingGroup({amazingGroups}) {
                         </div>
                     </div>
                 </div>
-                <div className="absolute bottom-0  w-full left-0 lg:px-20 lg:rounded-xl">
-                    <div className="relative h-[200px] lg:h-full ">
+                <div className="absolute bottom-5 lg:bottom-0 w-full left-0 lg:px-20 lg:rounded-xl">
+                    <div className="relative h-[170px] lg:h-full ">
                         <img src="/assets/cta/bg.png" className="lg:rounded-xl h-full w-full object-cover" alt="alt"/>
                         <img src="/assets/cta/overlay.png" className="absolute top-0 h-full lg:rounded-xl w-full" alt="" />
                         <div className="absolute top-0 left-0 w-full p-3 lg:p-10 text-white">
