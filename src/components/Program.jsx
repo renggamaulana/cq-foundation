@@ -2,16 +2,24 @@ import PropTypes from 'prop-types';
 
 export default function Program({programs}) {
     return (
-        <section className="relative">
-            <div className="relative max-h-[932px]">
-                <img src="/assets/background/program.png" className="-translate-y-80 w-full " alt="" />
-                <div className=" absolute z-10 top-20 px-20 w-full">
-                    <div className="flex justify-between items-center">
+        <section className="w-full lg:mt-20">
+            <div className="relative w-full h-[1230px]">
+                <img
+                    src="/assets/background/program.png"
+                    className="w-full object-cover lg:-translate-y-96"
+                    alt=""
+                />
+                <div className="absolute z-10 top-10 px-4 sm:px-8 lg:px-20 w-full">
+                    <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center mb-6 lg:mb-0">
                         <div>
-                            <h1 className="text-5xl font-semibold mb-3">Program Pilihan</h1>
-                            <p className="text-base font-light">Program-program terbaik dari Cinta Quraa Foundation untuk Sahabat Cinta Quran.</p>
+                            <h1 className="text-3xl lg:text-5xl font-semibold mb-2 lg:mb-3">
+                                Program Pilihan
+                            </h1>
+                            <p className="text-sm lg:text-base font-light">
+                                Program-program terbaik dari Cinta Quran Foundation untuk Sahabat Cinta Quran.
+                            </p>
                         </div>
-                        <div className="flex gap-5">
+                        <div className="hidden lg:flex gap-5 mt-4 lg:mt-0">
                             <button className="bg-white border border-[#389ED9] rounded-full p-2 hover:cursor-pointer">
                                 <img src="/assets/icons/chevron-left.svg" alt="" />
                             </button>
@@ -20,27 +28,22 @@ export default function Program({programs}) {
                             </button>
                         </div>
                     </div>
-                    <div className="grid grid-cols-3 gap-4 mt-10 w-full">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
                         {programs.map((program, index) => (
-                            <div
-                                key={program.id}
-                                className={`relative ${
-                                    index === 0 ? 'col-span-2' : index === 1 ? 'col-span-1' : 'col-span-1'
-                                }`}
-                            >
-                                <div className="relative">
+                            <div key={program.id} className={`relative ${index === 0 ? 'lg:col-span-2' : 'lg:col-span-1'}`}>
+                                <div className="relative w-full">
                                     <img
                                         src={program.image}
                                         alt=""
-                                        className="w-full h-full object-cover rounded-3xl "
+                                        className="h-[200px] lg:h-full w-full object-cover rounded-3xl"
                                     />
                                     <div className="absolute inset-0 bg-black opacity-30 rounded-3xl"></div>
                                 </div>
-                                <div className={`absolute flex flex-col ${
-                                    index === 0 ? 'gap-3' : index === 1 ? 'gap-3' : 'gap-0'
-                                } bottom-0 left-0 w-full p-10 text-white z-10`}>
-                                    <h1 className="text-xl font-bold">{program.title}</h1>
-                                    <p className="text-md">{program.description ?? ''}</p>
+                                <div className={`absolute flex flex-col ${ index === 0 ? 'gap-2 sm:gap-3' : 'gap-1 sm:gap-3'} bottom-0 left-0 w-full p-4 sm:p-5 lg:p-10 text-white z-10`}>
+                                    <h1 className="text-lg sm:text-xl font-bold">{program.title}</h1>
+                                    <p className="hidden lg:block text-sm sm:text-md">
+                                        {program.description ?? ''}
+                                    </p>
                                 </div>
                             </div>
                         ))}

@@ -320,7 +320,7 @@ const Homepage = () => {
             <Hero />
             <Donation donationCategories={donationCategories} donations={donations} />
             <Program programs={programs}></Program>
-            {/* <Kajian kajianMenus={kajianMenus} events={events}></Kajian> */}
+            <Kajian kajianMenus={kajianMenus} events={events}></Kajian>
             {/* <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup> */}
         </div>
     );

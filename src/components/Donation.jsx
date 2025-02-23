@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 export default function Donation({donationCategories, donations}) {
     return (
         <section className="px-8 lg:px-20 py-10 lg:mt-10  text-neutral-800 relative">
-            <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row justify-between items-center">
                 <div className="mb-6 sm:mb-0">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-3">Donasi Pilihan</h1>
                     <p className="text-sm sm:text-base font-light">
@@ -20,7 +20,7 @@ export default function Donation({donationCategories, donations}) {
                 </div>
             </div>
             {/* Donation Categories */}
-            <div className="flex overflow-x-auto scrollbar-hide w-full gap-5">
+            <div className="flex overflow-x-auto scrollbar-hide w-full gap-5 lg:mt-8">
                 {donationCategories.map((donationCategory) => (
                     <button key={donationCategory.id} className={`flex gap-2 border px-3 py-2 w-full min-w-[180px] rounded-full font-light items-center justify-center hover:cursor-pointer hover:bg-[#eef7fc] hover:text-[#389ED9] hover:border-[#389ED9] ${donationCategory.isActive ? 'border-[#389ED9] bg-[#eef7fc] text-[#389ED9]' : 'border-neutral-300'}`}>
                         <img src={donationCategory.icon} alt="" className="w-[24px] h-[24px]" />
@@ -64,13 +64,13 @@ export default function Donation({donationCategories, donations}) {
                 ))}
             </div>
             {/* Indicator */}
-            <div className="flex space-x-2 justify-center p-4 mt-5 mb-10">
+            <div className="hidden lg:flex space-x-2 justify-center p-4 mt-5 mb-10">
                 <div className="h-1 w-8 rounded-full bg-blue-500"></div>
                 <div className="h-1 w-4 rounded-full bg-gray-300"></div>
                 <div className="h-1 w-4 rounded-full bg-gray-300"></div>
                 <div className="h-1 w-4 rounded-full bg-gray-300"></div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10">
+            <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 mt-10 lg:mt-0">
                 <div className="flex w-[354px] gap-3">
                     <img src="/assets/icons/money.svg" className="w-[117px] h-[108px]" alt="" />
                     <div className="flex flex-col w-[221px] gap-3">
