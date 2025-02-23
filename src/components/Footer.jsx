@@ -1,18 +1,18 @@
 export default function Footer() {
     return (
         <footer className="relative">
-            <img src="/assets/background/footer.png" className="absolute w-full -top-32" alt="" />
-            <div className="relative grid grid-cols-3 gap-20 mt-10 px-20 py-5 w-full bottom-0">
+            <img src="/assets/background/footer.png" className="absolute w-full bottom-0 h-[200px] lg:h-auto lg:-top-32" alt="" />
+            <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-20 mt-10 px-8 lg:px-20 lg:py-5 w-full bottom-0">
                 <div className="flex flex-col gap-5">
                     <img src="/assets/logo-text.png" className="self-baseline" alt="logo" />
                     <p className="text-sm font-light text-neutral-800">Cinta Quran Foundation adalah lembaga independen yang mendakwahkan Alquran sebagai solusi dan inspirasi untuk negeri.</p>
-                    <button className="text-white hover:cursor-pointer py-2 pl-2 pr-8 self-baseline bg-[#389ED9] rounded-full flex gap-3 items-center mb-10">
+                    <button className="text-white hover:cursor-pointer py-2 pl-2 pr-8 self-baseline bg-[#389ED9] rounded-full flex gap-3 items-center">
                             <img src="/assets/icons/arrow-right.svg" alt="" />
                             <span className="text-sm font-semibold">Lihat Laporan CQ Foundation</span>
                     </button>
                 </div>
-                <div className="flex justify-between">
-                    <ul className="text-md font-light text-neutral-600 leading-7">
+                <div className="flex flex-row justify-between">
+                    <ul className="text-md font-light text-neutral-600 lg:leading-7">
                         <li>
                             <a href="">Program</a>
                         </li>
@@ -86,7 +86,7 @@ export default function Footer() {
                     </div>
                 </div>
             </div>
-            <span className="text-sm w-full px-20 font-light">© Copyright CintaQuran® Foundation All Rights Reserved.</span>
+            <p className="text-sm w-full px-8 lg:px-20 font-light mt-10">© Copyright CintaQuran® Foundation All Rights Reserved.</p>
         </footer>
     )
 }

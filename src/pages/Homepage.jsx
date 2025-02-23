@@ -316,13 +316,13 @@ const Homepage = () => {
     ];
 
     return (
-        <>
+        <div className="overflow-hidden">
             <Hero />
-            {/* <Donation donationCategories={donationCategories} donations={donations} />
+            <Donation donationCategories={donationCategories} donations={donations} />
             <Program programs={programs}></Program>
-            <Kajian kajianMenus={kajianMenus} events={events}></Kajian>
-            <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup> */}
-        </>
+            {/* <Kajian kajianMenus={kajianMenus} events={events}></Kajian> */}
+            {/* <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup> */}
+        </div>
     );
  };
 
