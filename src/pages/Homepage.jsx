@@ -318,10 +318,10 @@ const Homepage = () => {
     return (
         <>
             <Hero />
-            <Donation donationCategories={donationCategories} donations={donations} />
+            {/* <Donation donationCategories={donationCategories} donations={donations} />
             <Program programs={programs}></Program>
             <Kajian kajianMenus={kajianMenus} events={events}></Kajian>
-            <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup>
+            <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup> */}
         </>
     );
  };
