@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function Kajian({kajianMenus, events}) {
     return (
-        <section className="lg:px-20 w-full mt-10 lg:-translate-y-90">
+        <section className="lg:px-20 w-full mt-10 lg:-translate-y-96">
             <div className="lg:text-center px-8">
                 <h1 className="text-4xl lg:text-5xl font-semibold mb-3">Kajian Inspiratif</h1>
                 <p className="text-md font-light text-neutral-600">Program kajian inspiratif dari kami untuk menemani aktivitas Sahabat Cinta Qur’an.</p>
@@ -16,8 +16,8 @@ export default function Kajian({kajianMenus, events}) {
                 ))}
             </div>
 
-            <div className="min-h-screen mt-10 px-8 lg:px-0">
-                <div className="grid grid-cols-1 lg:grid-cols-6 gap-4">
+            <div className="max-h-[500px] lg:max-h-full overflow-y-auto scrollbar-hide lg:min-h-screen mt-10 px-8 lg:px-0">
+                <div className="grid  w-full grid-cols-1 lg:grid-cols-6 gap-4">
                     {events.map((event, index) => (
                     <div
                         key={event.id}
@@ -25,11 +25,14 @@ export default function Kajian({kajianMenus, events}) {
                         index === 0 ? "lg:col-span-3 lg:row-span-3" : "col-span-1 row-span-1"
                         }`}
                     >
-                        <img
-                        src={event.image}
-                        alt={event.title}
-                        className="w-full h-full object-cover"
-                        />
+                        <div className="h-full">
+                            <img
+                            src={event.image}
+                            alt={event.title}
+                            className="w-full h-full object-fit"
+                            />
+
+                        </div>
                     </div>
                     ))}
                 </div>

@@ -321,7 +321,7 @@ const Homepage = () => {
             <Donation donationCategories={donationCategories} donations={donations} />
             <Program programs={programs}></Program>
             <Kajian kajianMenus={kajianMenus} events={events}></Kajian>
-            {/* <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup> */}
+            <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup>
         </div>
     );
  };
