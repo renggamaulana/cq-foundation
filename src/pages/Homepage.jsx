@@ -46,19 +46,28 @@ const Homepage = () => {
             id: 1,
             title: "Sedekah Beras untuk seluruh para keluarga di afrika selatan",
             image: "/assets/donation-card/1.png",
-            progress: 10
+            progress: 10,
+            amountCollected: 200,
+            timeLeft: '2 Hari Lagi'
+            
         },
         {
             id: 2,
             title: "Bantu Bencana Gempa dengan Kebutuhan Pokok",
             image: "/assets/donation-card/2.png",
-            progress: 50
+            progress: 50,
+            amountCollected: 200,
+            timeLeft: '2 Hari Lagi'
+            
         },
         {
             id: 3,
             title: "Penyaluran Bantuan untuk Anak Yatim dan Dhuafa",
             image: "/assets/donation-card/3.png",
-            progress: 70
+            progress: 70,
+            amountCollected: 200,
+            timeLeft: '2 Hari Lagi'
+            
         },
     ];
 

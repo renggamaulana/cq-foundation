@@ -9,31 +9,33 @@ export default function AmazingGroup({amazingGroups}) {
                     <div className="absolute top-7 w-full px-8">
                         <h1 className="lg:text-center text-3xl lg:text-5xl font-semibold">Amazing Group</h1>
                         <div className="w-full">
-                            <div className="overflow-hidden w-full mt-10 whitespace-nowrap">
+                            {/* Marquee ke kanan */}
+                            <div className="overflow-hidden w-full mt-10 whitespace-nowrap relative">
                                 <div className="flex items-center gap-8 animate-marquee">
-                                    {amazingGroups.map((group, index) => (
+                                    {amazingGroups.concat(amazingGroups).map((group, index) => (
                                         <div
-                                        key={`marquee-1-${index}`}
-                                        className="lg:w-40 lg:h-20 flex justify-center items-center bg-white shadow-lg rounded-xl"
+                                            key={`marquee-1-${index}`}
+                                            className="lg:w-40 lg:h-20 flex justify-center items-center bg-white shadow-lg rounded-xl"
                                         >
-                                        <img src={group.image} alt="Logo" className="w-24 h-auto" />
+                                            <img src={group.image} alt="Logo" className="w-24 h-auto" />
                                         </div>
                                     ))}
                                 </div>
                             </div>
 
-                            <div className="overflow-hidden w-full whitespace-nowrap mt-4">
+                            {/* Marquee ke kiri */}
+                            <div className="overflow-hidden w-full whitespace-nowrap mt-4 relative">
                                 <div className="flex items-center gap-8 animate-marquee-reverse">
-                                {amazingGroups.map((group, index) => (
-                                    <div
-                                    key={`marquee-2-${index}`}
-                                    className="w-40 h-20 flex justify-center items-center bg-white shadow-lg rounded-xl"
-                                    >
-                                    <img src={group.image} alt="Logo" className="w-24 h-auto" />
-                                    </div>
-                                ))}
+                                    {amazingGroups.concat(amazingGroups).map((group, index) => (
+                                        <div
+                                            key={`marquee-2-${index}`}
+                                            className="w-40 h-20 flex justify-center items-center bg-white shadow-lg rounded-xl"
+                                        >
+                                            <img src={group.image} alt="Logo" className="w-24 h-auto" />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
                         </div>
                     </div>
                 </div>
