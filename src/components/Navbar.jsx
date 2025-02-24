@@ -3,7 +3,7 @@ import { useState } from "react";
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <nav className="flex justify-between items-center bg-white px-6 md:px-16 lg:px-20 py-4 shadow-sm">
+        <nav className="flex justify-between z-20 items-center bg-white px-6 md:px-16 lg:px-20 py-4 shadow-sm">
             {/* Logo */}
             <div>
                 <img src="/assets/logo-text.png" alt="logo" className="h-8 md:h-10" />
@@ -37,9 +37,9 @@ export default function Navbar() {
 
             {/* Mobile Menu */}
             {isOpen && (
-                <div className="absolute top-16 left-0 w-full bg-white shadow-lg lg:hidden">
+                <div className="absolute top-16 left-0 w-full bg-white shadow-lg lg:hidden z-10">
                 <ul className="flex flex-col items-center gap-4 py-4">
-                    <li className="cursor-pointer hover:text-[#389ED9] transition">Program</li>
+                    <li className="cursor-pointer hover:text-[#389ED9] transition">Programss</li>
                     <li className="cursor-pointer hover:text-[#389ED9] transition">Kajian</li>
                     <li className="cursor-pointer hover:text-[#389ED9] transition">Donasi</li>
                     <li className="cursor-pointer hover:text-[#389ED9] transition">Kemitraan</li>

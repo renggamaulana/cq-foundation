@@ -18,7 +18,7 @@ export default function Hero() {
                 transition={{ duration: 1, delay: 0.5 }}
             ></motion.div>
 
-            <div className="p-8 md:p-16 lg:p-20 flex flex-col lg:flex-row gap-15 justify-center">
+            <div className="p-8 md:p-16 lg:p-20 -z-20 flex flex-col lg:flex-row gap-15 justify-center">
                 {/* Left Section */}
                 <motion.div
                 className="flex-1"
