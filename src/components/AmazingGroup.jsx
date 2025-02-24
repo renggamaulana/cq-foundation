@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 export default function AmazingGroup({amazingGroups}) {
     return (
         <section>
-            <div className="relative lg:-translate-y-48">
-                <div className="lg:max-h-[700px]">
+            <div className="relative lg:-translate-y-6">
+                <div className="lg:max-h-[900px]">
                     <img src="/assets/background/partner.png" className="-translate-y-20 lg:max-h-full max-h-[500px] lg:-translate-y-96 w-full" alt="alt"/>
                     <div className="absolute top-7 w-full px-8">
                         <h1 className="lg:text-center text-3xl lg:text-5xl font-semibold">Amazing Group</h1>
@@ -37,13 +37,13 @@ export default function AmazingGroup({amazingGroups}) {
                         </div>
                     </div>
                 </div>
-                <div className="absolute bottom-5 lg:bottom-0 w-full left-0 lg:px-20 lg:rounded-xl">
-                    <div className="relative h-[170px] lg:h-full ">
+                <div className="absolute lg:top-96 lg:bottom-0 w-full left-0 overflow-hidden lg:px-20 lg:rounded-xl">
+                    <div className="relative">
                         <img src="/assets/cta/bg.png" className="lg:rounded-xl h-full w-full object-cover" alt="alt"/>
                         <img src="/assets/cta/overlay.png" className="absolute top-0 h-full lg:rounded-xl w-full" alt="" />
                         <div className="absolute top-0 left-0 w-full p-3 lg:p-10 text-white">
                             <h1 className="text-lg lg:text-3xl font-semibold lg:w-[650px]">Mari bergabung menjadi keluarga Cinta Quran Foundation agar bisa berbagi dengan sesama</h1>
-                            <button className="flex gap-4 items-center bg-white rounded-full px-5 lg:px-15 py-2 mt-5">
+                            <button className="cursor-pointer hover:translate-x-2 transition duration-400 flex gap-4 items-center bg-white rounded-full px-5 lg:px-15 py-2 mt-5">
                                 <span className="text-sm font-semibold text-[#389ED9]">Daftar Sekarang</span>
                                 <img src="/assets/icons/arrow-right-blue.svg" alt="" />
                             </button>   

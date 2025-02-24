@@ -2,15 +2,15 @@ import PropTypes from 'prop-types';
 
 export default function Donation({donationCategories, donations}) {
     return (
-        <section className="px-8 lg:px-20 py-10 lg:mt-10  text-neutral-800 relative">
+        <section className="py-10 lg:mt-10  text-neutral-800 relative">
             <div className="flex flex-col sm:flex-row justify-between items-center">
-                <div className="mb-6 sm:mb-0">
+                <div className="mb-6 sm:mb-0 px-8 lg:px-20">
                     <h1 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-3">Donasi Pilihan</h1>
                     <p className="text-sm sm:text-base font-light">
                         Pilih dan salurkan donasi melalui program-program kami yang berarti bagi sahabat Cinta quran.
                     </p>
                 </div>
-                <div className="hidden lg:flex gap-3 sm:gap-5">
+                <div className="hidden lg:flex gap-3 sm:gap-5 lg:mx-20">
                     <button className="bg-white border border-[#389ED9] rounded-full p-2 hover:cursor-pointer">
                         <img src="/assets/icons/chevron-left.svg" alt="" />
                     </button>
@@ -20,7 +20,7 @@ export default function Donation({donationCategories, donations}) {
                 </div>
             </div>
             {/* Donation Categories */}
-            <div className="flex overflow-x-auto scrollbar-hide w-full gap-5 lg:mt-8">
+            <div className="flex pl-8 lg:px-20 gap-3 mt-5 overflow-x-auto scrollbar-hide">
                 {donationCategories.map((donationCategory) => (
                     <button key={donationCategory.id} className={`flex gap-2 border px-3 py-2 w-full min-w-[180px] rounded-full font-light items-center justify-center hover:cursor-pointer hover:bg-[#eef7fc] hover:text-[#389ED9] hover:border-[#389ED9] ${donationCategory.isActive ? 'border-[#389ED9] bg-[#eef7fc] text-[#389ED9]' : 'border-neutral-300'}`}>
                         <img src={donationCategory.icon} alt="" className="w-[24px] h-[24px]" />
@@ -29,7 +29,7 @@ export default function Donation({donationCategories, donations}) {
                 ))}
             </div>
             {/* Donation Cards */}
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 mt-10 px-8 lg:px-20 ">
                 {donations.map((donation) => (
                     <div key={donation.id} className="bg-white rounded-lg shadow-xl">
                         <img src={donation.image} alt="" className="w-full rounded-t-md" />
@@ -70,7 +70,7 @@ export default function Donation({donationCategories, donations}) {
                 <div className="h-1 w-4 rounded-full bg-gray-300"></div>
                 <div className="h-1 w-4 rounded-full bg-gray-300"></div>
             </div>
-            <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 mt-10 lg:mt-0">
+            <div className="grid grid-cols-1 lg:grid-cols-3 w-full gap-10 mt-10 lg:mt-0 px-8 lg:px-20">
                 <div className="flex w-[354px] gap-3">
                     <img src="/assets/icons/money.svg" className="w-[117px] h-[108px]" alt="" />
                     <div className="flex flex-col w-[221px] gap-3">

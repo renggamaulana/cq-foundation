@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 export default function Kajian({kajianMenus, events}) {
     return (
-        <section className="lg:px-20 w-full mt-10 lg:-translate-y-96">
+        <section className="lg:px-20 mt-[800px] lg:mt-0 lg:-translate-y-48">
             <div className="lg:text-center px-8">
                 <h1 className="text-3xl lg:text-5xl font-semibold mb-3">Kajian Inspiratif</h1>
                 <p className="text-md font-light text-neutral-600">Program kajian inspiratif dari kami untuk menemani aktivitas Sahabat Cinta Qur’an.</p>
@@ -25,13 +25,30 @@ export default function Kajian({kajianMenus, events}) {
                         index === 0 ? "lg:col-span-3 lg:row-span-3" : "col-span-1 row-span-1"
                         }`}
                     >
-                        <div className="h-full">
+                        <div className="h-full relative">
                             <img
                             src={event.image}
                             alt={event.title}
                             className="w-full h-full object-fit"
                             />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
+                            {index === 0 && (
+                                <div className="flex flex-col justify-between absolute bottom-0 h-full p-3 lg:p-6">
+                                    <div className="self-baseline">
+                                        <div className="bg-[#FF3C5A] px-8 py-1 rounded-full flex gap-2">
+                                            <img src="/assets/icons/live-white.svg" alt="" />
+                                            <h1 className="text-white font-semibold text-md">Sedang Berlangsung!</h1>
+                                        </div>
+                                    </div>
+                                    <div className=" w-full text-white">
+                                        <span className="font-light">{event.studio}</span>
+                                        <h1 className="text-xl lg:text-2xl text-white font-semibold mb-3">{event.title}</h1>
 
+                                        <p className="text-[#AFCD21]">{event.date}</p>
+                                        <p className="mt-1">{event.time}</p>
+                                    </div>
+                                </div>
+                            )}
                         </div>
                     </div>
                     ))}
