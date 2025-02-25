@@ -21,7 +21,7 @@ export default function Kajian({kajianMenus, events}) {
                         Program kajian inspiratif dari kami untuk menemani aktivitas Sahabat Cinta Qur’an.
                     </p>
                 </div>
-                <div className="flex pl-8 lg:pl-0 gap-3 mt-5 overflow-x-auto scrollbar-hide">
+                <div className="flex pl-8 py-2 lg:pl-0 gap-3 mt-5 overflow-x-auto scrollbar-hide">
                     {kajianMenus.map((menu) => (
                         <motion.button 
                             key={menu.id} 

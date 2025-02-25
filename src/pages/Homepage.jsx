@@ -3,8 +3,34 @@ import Donation from "../components/Donation";
 import Hero from "../components/Hero";
 import Kajian from "../components/Kajian";
 import Program from "../components/Program";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Homepage = () => {
+
+    const [data, setData] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(null);
+
+    const fetchData = async () => {
+        try {
+        const response = await axios.get("http://localhost:8000/api/homepage");
+        setData(response.data);
+        } catch (err) {
+        setError(err.message || "Error fetching data");
+        console.error("Error fetching data:", err);
+        } finally {
+        setLoading(false);
+        }
+    };
+
+    useEffect(() => {
+        fetchData();
+        console.log(data)
+    }, []);
+
+    if (loading) return <p>Loading...</p>;
+    if (error) return <p>Error: {error}</p>;
 
     const donationCategories = [
         {
@@ -39,16 +65,14 @@ const Homepage = () => {
         },
     ];
 
-   
-
     const donations = [
         {
             id: 1,
             title: "Sedekah Beras untuk seluruh para keluarga di afrika selatan",
             image: "/assets/donation-card/1.png",
             progress: 10,
-            amountCollected: 200,
-            timeLeft: '2 Hari Lagi'
+            collected_fund: 200,
+            deadline: '2 Hari Lagi'
             
         },
         {
@@ -56,8 +80,8 @@ const Homepage = () => {
             title: "Bantu Bencana Gempa dengan Kebutuhan Pokok",
             image: "/assets/donation-card/2.png",
             progress: 50,
-            amountCollected: 200,
-            timeLeft: '2 Hari Lagi'
+            collected_fund: 200,
+            deadline: '2 Hari Lagi'
             
         },
         {
@@ -65,8 +89,8 @@ const Homepage = () => {
             title: "Penyaluran Bantuan untuk Anak Yatim dan Dhuafa",
             image: "/assets/donation-card/3.png",
             progress: 70,
-            amountCollected: 200,
-            timeLeft: '2 Hari Lagi'
+            collected_fund: 200,
+            deadline: '2 Hari Lagi'
             
         },
         
@@ -313,10 +337,10 @@ const Homepage = () => {
     return (
         <div className="overflow-hidden">
             <Hero id="hero"/>
-            <Donation donationCategories={donationCategories} donations={donations} id="donation"/>
+            <Donation donationCategories={donationCategories} donations={data?.donations} id="donation"/>
             <Program programs={programs} id="program"/>
             <Kajian kajianMenus={kajianMenus} events={events} id="kajian"/>
-            <AmazingGroup amazingGroups={amazingGroups} id="partner"/>
+            <AmazingGroup amazingGroups={data?.partners} id="partner"/>
         </div>
     );
  };

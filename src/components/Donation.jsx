@@ -4,7 +4,21 @@ export default function Donation({donationCategories, donations}) {
     const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.8 } },
-      };
+    };
+
+    const calculateDeadline = (deadline) => {
+        const today = new Date();
+        const targetDate = new Date(deadline);
+        const difference = targetDate - today;
+        return Math.ceil(difference / (1000 * 60 * 60 * 24)); // Konversi ke hari
+    };
+    const formattedFund = (amount) => {
+        return new Intl.NumberFormat("id-ID", {
+            style: "currency",
+            currency: "IDR",
+            minimumFractionDigits: 0, // Menghilangkan desimal jika tidak diperlukan
+        }).format(amount);
+    };
 
     return (
         // <section className="lg:mt-30 text-neutral-800 relative">
@@ -46,13 +60,13 @@ export default function Donation({donationCategories, donations}) {
         //                         {/* Informasi Dana */}
         //                         <div className="mt-4">
         //                         <p className="text-sm text-neutral-600">Dana Terkumpul</p>
-        //                         <p className="text-md lg:text-lg font-semibold text-[#389ED9]">Rp {donation.amountCollected.toLocaleString()}</p>
+        //                         <p className="text-md lg:text-lg font-semibold text-[#389ED9]">Rp {donation.collected_fund.toLocaleString()}</p>
         //                         </div>
 
         //                         {/* Time Left */}
         //                         <div className="mt-4">
         //                         <p className="text-sm text-neutral-600">Sisa Waktu</p>
-        //                         <p className="text-md lg:text-lg font-semibold text-[#389ED9]">Rp {donation.timeLeft}</p>
+        //                         <p className="text-md lg:text-lg font-semibold text-[#389ED9]">Rp {donation.deadline}</p>
         //                         </div>
         //                     </div>
         //                     {/* Progress Bar */}
@@ -130,7 +144,7 @@ export default function Donation({donationCategories, donations}) {
             
             {/* Donation Categories */}
             <motion.div 
-                className="flex pl-8 lg:px-20 gap-3 mt-5 overflow-x-auto scrollbar-hide"
+                className="flex pl-8 py-2 lg:px-20 gap-3 mt-5 overflow-x-auto scrollbar-hide"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true }}
@@ -159,20 +173,25 @@ export default function Donation({donationCategories, donations}) {
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.2 }}
                 >
-                    <img src={donation.image} alt="" className="w-1/4 md:w-1/3 lg:w-full rounded-l-md lg:rounded-l-none lg:rounded-t-md object-cover" />
+                    <img src={donation.image} alt="" className="w-1/4 md:w-1/3 lg:w-[370px] lg:h-[370px] rounded-l-md lg:rounded-l-none lg:rounded-t-md object-cover" />
                     <div className="flex-1 p-4">
-                    <h1 className="text-base font-semibold">{donation.title}</h1>
-                    <p className="text-sm text-neutral-600">{donation.description}</p>
-                    <div className="flex justify-between mt-4 flex-col lg:flex-row">
-                        <div className="mt-4">
-                        <p className="text-sm text-neutral-600">Dana Terkumpul</p>
-                        <p className="text-md lg:text-lg font-semibold text-[#389ED9]">Rp {donation.amountCollected.toLocaleString()}</p>
+                        <h1 className="text-base font-semibold">{donation.title}</h1>
+                        <p className="text-sm text-neutral-600">{donation.description}</p>
+                        <div className="flex justify-between mt-4 flex-col lg:flex-row">
+                            <div className="mt-4">
+                            <p className="text-sm text-neutral-600">Dana Terkumpul</p>
+                            <p className="text-md lg:text-lg font-semibold text-[#389ED9]">{formattedFund(donation.collected_fund).toLocaleString()}</p>
+                            </div>
+                            <div className="mt-4">
+                            <p className="text-sm text-neutral-600">Sisa Waktu</p>
+                            <p className="text-md lg:text-lg font-semibold text-[#389ED9]">{calculateDeadline(donation.deadline)} hari lagi</p>
+                            </div>
                         </div>
-                        <div className="mt-4">
-                        <p className="text-sm text-neutral-600">Sisa Waktu</p>
-                        <p className="text-md lg:text-lg font-semibold text-[#389ED9]">{donation.timeLeft}</p>
+                        {/* Progress Bar */}
+                        <div className="relative w-full h-1 bg-gray-200 rounded-full mt-2">
+                            <div className="h-full bg-[#AFCD21] rounded-full" style={{ width: `${donation.progress}%` }}></div>
+                            <div className="absolute w-2 h-2 bg-[#AFCD21] rounded-full" style={{ left: `calc(${donation.progress}% - 6px)`, top: "-2px" }}></div>
                         </div>
-                    </div>
                     </div>
                 </motion.div>
                 ))}
@@ -197,8 +216,8 @@ Donation.propTypes = {
             id: PropTypes.number.isRequired,
             title: PropTypes.string.isRequired,
             image: PropTypes.string.isRequired,
-            amountCollected: PropTypes.number.isRequired,
-            timeLeft: PropTypes.string.isRequired,
+            collected_fund: PropTypes.number.isRequired,
+            deadline: PropTypes.string.isRequired,
             progress: PropTypes.number.isRequired
         })
     ).isRequired
