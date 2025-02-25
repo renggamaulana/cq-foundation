@@ -5,6 +5,11 @@ body {
   /* background: rgb(240, 240, 240); */
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 /* Hilangkan scrollbar untuk Chrome, Safari */
 .scrollbar-hide::-webkit-scrollbar {
   display: none;

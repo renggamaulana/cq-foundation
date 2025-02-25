@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from 'react-scroll';
 
 export default function Navbar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -19,12 +20,24 @@ export default function Navbar() {
 
             {/* Navigation Links (Hidden in Mobile) */}
             <ul className="hidden lg:flex items-center gap-4 text-md">
-                <li className="cursor-pointer hover:text-[#389ED9] transition">Program</li>
-                <li className="cursor-pointer hover:text-[#389ED9] transition">Kajian</li>
-                <li className="cursor-pointer hover:text-[#389ED9] transition">Donasi</li>
-                <li className="cursor-pointer hover:text-[#389ED9] transition">Kemitraan</li>
-                <li className="cursor-pointer hover:text-[#389ED9] transition">Update</li>
-                <li className="cursor-pointer hover:text-[#389ED9] transition">Kontak</li>
+                <li className="cursor-pointer hover:text-[#389ED9] transition">
+                   <Link to="program" smooth={true} duration={500} offset={-80}>Program</Link>
+                </li>
+                <li className="cursor-pointer hover:text-[#389ED9] transition">
+                   <Link to="kajian" smooth={true} duration={500} offset={-80}>Kajian</Link>
+                </li>
+                <li className="cursor-pointer hover:text-[#389ED9] transition">
+                   <Link to="donation" smooth={true} duration={500} offset={-80}>Donasi</Link>
+                </li>
+                <li className="cursor-pointer hover:text-[#389ED9] transition">
+                   <Link to="partner" smooth={true} duration={500} offset={-80}>Kemitraan</Link>
+                </li>
+                <li className="cursor-pointer hover:text-[#389ED9] transition">
+                   <Link to="update" smooth={true} duration={500} offset={-80}>Update</Link>
+                </li>
+                <li className="cursor-pointer hover:text-[#389ED9] transition">
+                   <Link to="kontak" smooth={true} duration={500} offset={-80}>Kontak</Link>
+                </li>
                 <li>
                 <img src="/assets/icons/search.svg" alt="search" className="w-5 h-5" />
                 </li>
@@ -39,12 +52,24 @@ export default function Navbar() {
             {isOpen && (
                 <div className="absolute top-16 left-0 w-full bg-white shadow-lg lg:hidden z-10">
                 <ul className="flex flex-col items-center gap-4 py-4">
-                    <li className="cursor-pointer hover:text-[#389ED9] transition">Programss</li>
-                    <li className="cursor-pointer hover:text-[#389ED9] transition">Kajian</li>
-                    <li className="cursor-pointer hover:text-[#389ED9] transition">Donasi</li>
-                    <li className="cursor-pointer hover:text-[#389ED9] transition">Kemitraan</li>
-                    <li className="cursor-pointer hover:text-[#389ED9] transition">Update</li>
-                    <li className="cursor-pointer hover:text-[#389ED9] transition">Kontak</li>
+                    <li className="cursor-pointer hover:text-[#389ED9] transition">
+                        <Link to="program" smooth={true} duration={500} offset={-80}>Program</Link>
+                    </li>
+                    <li className="cursor-pointer hover:text-[#389ED9] transition">
+                        <Link to="kajian" smooth={true} duration={500} offset={-80}>Kajian</Link>
+                    </li>
+                    <li className="cursor-pointer hover:text-[#389ED9] transition">
+                        <Link to="donation" smooth={true} duration={500} offset={-80}>Donasi</Link>
+                    </li>
+                    <li className="cursor-pointer hover:text-[#389ED9] transition">
+                        <Link to="partner" smooth={true} duration={500} offset={-80}>Kemitraan</Link>
+                    </li>
+                    <li className="cursor-pointer hover:text-[#389ED9] transition">
+                        <Link to="update" smooth={true} duration={500} offset={-80}>Update</Link>
+                    </li>
+                    <li className="cursor-pointer hover:text-[#389ED9] transition">
+                        <Link to="kontak" smooth={true} duration={500} offset={-80}>Kontak</Link>
+                    </li>
                     <li>
                     <button className="border border-[#389ED9] rounded-full px-4 py-1 hover:bg-[#389ED9] hover:text-white transition">
                         Masuk

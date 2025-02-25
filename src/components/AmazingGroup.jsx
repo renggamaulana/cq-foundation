@@ -3,9 +3,9 @@ import { motion } from 'framer-motion';
 export default function AmazingGroup({amazingGroups}) {
 
     return (
-        <section className="lg:mb-20">
-            <div className="relative translate-y-48 lg:-translate-y-20">
-                <div className="h-[800px]">
+        <section className="lg:mb-20" id="partner">
+            <div className="relative translate-y-10 lg:-translate-y-20">
+                <div className="h-[600px] lg:h-[800px]">
                     <motion.img 
                         src="/assets/background/partner.png" 
                         className="-translate-y-20 lg:max-h-[1500px] max-h-[500px] absolute lg:-translate-y-96 w-full" 
@@ -70,7 +70,7 @@ export default function AmazingGroup({amazingGroups}) {
                         </div>
 
                     </div>
-                    <div className="absolute bottom-72 lg:bottom-10 w-full left-0 overflow-hidden lg:px-20 lg:rounded-xl">
+                    <div className="absolute bottom-22 lg:bottom-10 w-full left-0 overflow-hidden lg:px-20 lg:rounded-xl">
                         <motion.div 
                             className="relative lg:h-auto h-[150px] "
                             initial={{ opacity: 0, scale: 0.9 }}

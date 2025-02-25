@@ -312,11 +312,11 @@ const Homepage = () => {
 
     return (
         <div className="overflow-hidden">
-            <Hero />
-            <Donation donationCategories={donationCategories} donations={donations} />
-            <Program programs={programs}></Program>
-            <Kajian kajianMenus={kajianMenus} events={events}></Kajian>
-            <AmazingGroup amazingGroups={amazingGroups}></AmazingGroup>
+            <Hero id="hero"/>
+            <Donation donationCategories={donationCategories} donations={donations} id="donation"/>
+            <Program programs={programs} id="program"/>
+            <Kajian kajianMenus={kajianMenus} events={events} id="kajian"/>
+            <AmazingGroup amazingGroups={amazingGroups} id="partner"/>
         </div>
     );
  };

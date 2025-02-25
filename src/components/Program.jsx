@@ -14,6 +14,7 @@ export default function Program({programs}) {
             whileInView="visible"
             viewport={{ once: true }}
             className="w-full lg:mt-20"
+            id="program"
         >
             <div className="relative w-full -translate-y-10 lg:-translate-y-2">
                 <img
@@ -53,7 +54,7 @@ export default function Program({programs}) {
                             </motion.button>
                         </div>
                     </motion.div>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8 lg:max-h-[640px] max-h-[500px] scrollbar-hide overflow-scroll">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8 lg:max-h-[640px] max-h-[980px] scrollbar-hide overflow-scroll">
                         {programs.map((program, index) => (
                             <motion.div
                                 key={program.id}

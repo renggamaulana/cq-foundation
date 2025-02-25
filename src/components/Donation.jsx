@@ -105,6 +105,7 @@ export default function Donation({donationCategories, donations}) {
             whileInView="visible"
             viewport={{ once: true }}
             variants={sectionVariants}
+            id="donation"
             >
             <div className="flex flex-col sm:flex-row justify-between items-center">
                 <div className="mb-6 sm:mb-0 px-8 lg:px-20">
