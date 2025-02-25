@@ -7,7 +7,7 @@ export default function Kajian({kajianMenus, events}) {
     };
 
     return (
-        <section className="lg:px-20 mt-[720px] lg:mt-0 lg:-translate-y-48" id="kajian">
+        <section className="lg:px-20 mt-[130px] lg:mt-0 lg:-translate-y-48" id="kajian">
             {/* Animasi Fade In Saat Section Masuk */}
             <motion.div 
                 variants={sectionVariants}
@@ -50,7 +50,7 @@ export default function Kajian({kajianMenus, events}) {
                                 }`}
                             >
                                 <div className="h-full relative">
-                                    <img src={event.image} alt={event.title} className="w-full h-full object-fit" />
+                                    <img src={event.image_url} alt={event.title} className="w-full h-full object-fit" />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                                     {index === 0 && (
                                         <div className="flex flex-col justify-between absolute bottom-0 h-full p-3 lg:p-6">
@@ -90,7 +90,7 @@ Kajian.propTypes = {
     events: PropTypes.arrayOf(
         PropTypes.shape({
             id: PropTypes.number.isRequired,
-            image: PropTypes.string.isRequired,
+            image_url: PropTypes.string.isRequired,
             title: PropTypes.string.isRequired,
             studio: PropTypes.string.isRequired,
             date: PropTypes.string.isRequired,

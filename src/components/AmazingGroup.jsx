@@ -40,7 +40,7 @@ export default function AmazingGroup({amazingGroups}) {
                                     key={`marquee-1-${index}`}
                                     className="w-40 h-20 flex justify-center items-center bg-white shadow-lg rounded-xl"
                                 >
-                                    <img src={group.image} alt="Logo" className="w-24 h-auto" />
+                                    <img src={group.image_url} alt="Logo" className="w-24 h-auto" />
                                 </div>
                                 ))}
                             </motion.div>
@@ -61,7 +61,7 @@ export default function AmazingGroup({amazingGroups}) {
                                     key={`marquee-2-${index}`}
                                     className="w-40 h-20 flex justify-center items-center bg-white shadow-lg rounded-xl"
                                 >
-                                    <img src={group.image} alt="Logo" className="w-24 h-auto" />
+                                    <img src={group.image_url} alt="Logo" className="w-24 h-auto" />
                                 </div>
                                 ))}
                             </motion.div>
@@ -113,7 +113,7 @@ AmazingGroup.propTypes = {
         PropTypes.shape({
             id: PropTypes.number.isRequired,
             name: PropTypes.string.isRequired,
-            image: PropTypes.string.isRequired,
+            image_url: PropTypes.string.isRequired,
         })
     ).isRequired,
 };
