@@ -69,6 +69,7 @@ const Homepage = () => {
             timeLeft: '2 Hari Lagi'
             
         },
+        
     ];
 
     const programs = [
@@ -306,22 +307,7 @@ const Homepage = () => {
             id: 3,
             name: 'Cinta Quran Creative Studio',
             image: "/assets/partner/partner3.png",
-        },
-        {
-            id: 4,
-            name: 'Cinta Quran Creative Studio',
-            image: "/assets/partner/partner1.png",
-        },
-        {
-            id: 5,
-            name: 'Cinta Quran Creative Studio',
-            image: "/assets/partner/partner2.png",
-        },
-        {
-            id: 6,
-            name: 'Cinta Quran Creative Studio',
-            image: "/assets/partner/partner3.png",
-        },
+        }
     ];
 
     return (

@@ -3,17 +3,19 @@ import { motion } from 'framer-motion';
 export default function AmazingGroup({amazingGroups}) {
 
     return (
-        <section>
-            <div className="relative lg:-translate-y-6">
-                <div className="lg:h-full h-[500px]">
+        <section className="lg:mb-20">
+            <div className="relative translate-y-48 lg:-translate-y-20">
+                <div className="h-[800px]">
                     <motion.img 
                         src="/assets/background/partner.png" 
-                        className="-translate-y-20 lg:max-h-full max-h-[500px] lg:-translate-y-96 w-full" 
+                        className="-translate-y-20 lg:max-h-[1500px] max-h-[500px] absolute lg:-translate-y-96 w-full" 
                         alt="alt"
                         initial={{ opacity: 0, y: 50 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 1, ease: "easeOut" }}
                     />
+                </div>
+                <div className="">
                     <div className="absolute top-7 w-full">
                         <motion.h1 
                             className="lg:text-center text-3xl lg:text-5xl font-semibold px-8"
@@ -68,36 +70,37 @@ export default function AmazingGroup({amazingGroups}) {
                         </div>
 
                     </div>
-                </div>
-                <div className="absolute bottom-0 lg:top-96 lg:bottom-10 w-full left-0 overflow-hidden lg:px-20 lg:rounded-xl">
-                    <motion.div 
-                        className="relative lg:h-auto h-[150px] "
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, delay: 0.8 }}
-                    >
-                        <img src="/assets/cta/bg.png" className="lg:rounded-xl h-full w-full object-cover" alt="alt"/>
-                        <img src="/assets/cta/overlay.png" className="absolute top-0 h-full lg:rounded-xl w-full" alt="" />
-                        <div className="absolute top-0 left-0 w-full p-3 lg:p-10 text-white">
-                            <motion.h1 
-                                className="text-md lg:text-3xl font-semibold lg:w-[650px]"
-                                initial={{ opacity: 0, x: -50 }}
-                                whileInView={{ opacity: 1, x: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ duration: 1, delay: 0.3 }}
-                            >
-                                Mari bergabung menjadi keluarga Cinta Quran Foundation agar bisa berbagi dengan sesama
-                            </motion.h1>
-                            <motion.button 
-                                className="cursor-pointer flex gap-4 items-center bg-white rounded-full px-5 lg:px-15 py-2 mt-5"
-                                whileHover={{ scale: 1.1 }}
-                                whileTap={{ scale: 0.9 }}
-                            >
-                                <span className="text-sm font-semibold text-[#389ED9]">Daftar Sekarang</span>
-                                <img src="/assets/icons/arrow-right-blue.svg" alt="" />
-                            </motion.button>   
-                        </div>
-                    </motion.div>
+                    <div className="absolute bottom-72 lg:bottom-10 w-full left-0 overflow-hidden lg:px-20 lg:rounded-xl">
+                        <motion.div 
+                            className="relative lg:h-auto h-[150px] "
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 1, delay: 0.8 }}
+                        >
+                            <img src="/assets/cta/bg.png" className="lg:rounded-xl h-full w-full object-cover" alt="alt"/>
+                            <img src="/assets/cta/overlay.png" className="absolute top-0 h-full lg:rounded-xl w-full" alt="" />
+                            <div className="absolute top-0 left-0 w-full p-3 lg:p-10 text-white">
+                                <motion.h1 
+                                    className="text-md lg:text-3xl font-semibold lg:w-[650px]"
+                                    initial={{ opacity: 0, x: -50 }}
+                                    whileInView={{ opacity: 1, x: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ duration: 1, delay: 0.3 }}
+                                >
+                                    Mari bergabung menjadi keluarga Cinta Quran Foundation agar bisa berbagi dengan sesama
+                                </motion.h1>
+                                <motion.button 
+                                    className="cursor-pointer flex gap-4 items-center bg-white rounded-full px-5 lg:px-15 py-2 mt-5"
+                                    whileHover={{ scale: 1.1 }}
+                                    whileTap={{ scale: 0.9 }}
+                                >
+                                    <span className="text-sm font-semibold text-[#389ED9]">Daftar Sekarang</span>
+                                    <img src="/assets/icons/arrow-right-blue.svg" alt="" />
+                                </motion.button>   
+                            </div>
+                        </motion.div>
+                    </div>
+
                 </div>
             </div>
         </section>

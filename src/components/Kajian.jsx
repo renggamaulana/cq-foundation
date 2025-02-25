@@ -7,7 +7,7 @@ export default function Kajian({kajianMenus, events}) {
     };
 
     return (
-        <section className="lg:px-20 mt-[800px] lg:mt-0 lg:-translate-y-48">
+        <section className="lg:px-20 mt-[730px] lg:mt-0 translate-y-30 lg:-translate-y-48">
             {/* Animasi Fade In Saat Section Masuk */}
             <motion.div 
                 variants={sectionVariants}

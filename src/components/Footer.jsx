@@ -1,6 +1,6 @@
 export default function Footer() {
     return (
-        <footer className="relative mt-20 lg:mt-0">
+        <footer className="relative lg:mt-0">
             <img src="/assets/background/footer.png" className="absolute w-full bottom-0 h-[200px] lg:h-auto lg:-top-32" alt="" />
             <div className="relative grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-20 px-8 lg:px-20 lg:py-5 w-full bottom-0">
                 <div className="flex flex-col gap-5">
