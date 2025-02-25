@@ -53,7 +53,7 @@ export default function Program({programs}) {
                             </motion.button>
                         </div>
                     </motion.div>
-                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8">
+                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-8 lg:max-h-[640px] max-h-[500px] scrollbar-hide overflow-scroll">
                         {programs.map((program, index) => (
                             <motion.div
                                 key={program.id}
@@ -70,7 +70,8 @@ export default function Program({programs}) {
                                     <img
                                         src={program.image}
                                         alt=""
-                                        className="h-[200px] lg:h-full w-full object-cover rounded-3xl"
+                                        className={`h-[180px] w-full object-cover rounded-3xl 
+                                            ${index === 0 ? 'lg:h-[400px]' : index === 1 ? 'lg:h-[400px]' : ''}`}
                                     />
                                     <div className="absolute inset-0 bg-black opacity-30 rounded-3xl"></div>
                                 </motion.div>

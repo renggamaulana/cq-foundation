@@ -79,7 +79,7 @@ const Homepage = () => {
             description: 'Sebuah Fakta mengejutkan menyatakan bahwa 53,57% (BPS 2018). kaum muslimin di Indonesia tidak bisa membaca Al-Quran. ',
             image: '/assets/program-pilihan/1.png'
         },
-        {
+        {   
             id: 2,
             title: 'CintaQuran Call',
             description: 'Cinta Quran Call merupakan layanan pendampingan.',
