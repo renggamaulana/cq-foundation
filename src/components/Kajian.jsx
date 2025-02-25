@@ -50,7 +50,11 @@ export default function Kajian({kajianMenus, events}) {
                                 }`}
                             >
                                 <div className="h-full relative">
-                                    <img src={event.image_url} alt={event.title} className="w-full h-full object-fit" />
+                                    <img src={event.image_url} alt={event.title}
+                                        className={`w-full object-cover ${
+                                        index === 0 ? "w-full lg:h-[520px]" : "lg:h-[158px]"
+                                    }`} 
+                                        />
                                     <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent"></div>
                                     {index === 0 && (
                                         <div className="flex flex-col justify-between absolute bottom-0 h-full p-3 lg:p-6">
