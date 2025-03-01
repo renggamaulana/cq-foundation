@@ -14,13 +14,13 @@ const Homepage = () => {
 
     const fetchData = async () => {
         try {
-        const response = await axios.get("http://localhost:8000/api/homepage");
-        setData(response.data);
+            const response = await axios.get("http://localhost:8000/api/homepage");
+            setData(response.data);
         } catch (err) {
-        setError(err.message || "Error fetching data");
-        console.error("Error fetching data:", err);
+            setError(err.message || "Error fetching data");
+            console.error("Error fetching data:", err);
         } finally {
-        setLoading(false);
+            setLoading(false);
         }
     };
 
@@ -30,7 +30,11 @@ const Homepage = () => {
     }, []);
 
     if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+    if (error) return (
+        <div className="h-screen flex justify-center items-center">
+            <h1 className="text-5xl text-red-700">Error: {error}</h1>
+        </div>
+    );
 
     const donationCategories = [
         {
